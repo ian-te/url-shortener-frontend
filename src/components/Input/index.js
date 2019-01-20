@@ -9,3 +9,5 @@ Input.propTypes = {
     value: string,
     onChange: func
 };
+
+export default Input;

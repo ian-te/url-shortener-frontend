@@ -1,7 +1,7 @@
 import React from "react";
 import { func, string } from "prop-types";
 
-const Input = ({ value, onChange, children }) => {
+const Button = ({ value, onChange, children }) => {
     return (
         <button type="submit" value={value} onClick={onChange}>
             {children}
@@ -9,7 +9,9 @@ const Input = ({ value, onChange, children }) => {
     );
 };
 
-Input.propTypes = {
+Button.propTypes = {
     value: string,
-    onChange: func
+    onClick: func
 };
+
+export default Button;

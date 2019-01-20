@@ -1,11 +1,25 @@
 import React from "react";
 import Button from "../../components/Button";
-import Link from "../../components/Link";
+import LinkList from "../../components/LinkList";
 import Input from "../../components/Input";
 
 const Main = () => (
     <div>
         <Input />
-        <Button>Get URL</Button>;
+        <Button>Get URL</Button>
+        <LinkList
+            items={[
+                {
+                    title: "https://longlink.com",
+                    url: "https://test.com"
+                },
+                {
+                    title: "https://longlink.com",
+                    url: "https://test.com"
+                }
+            ]}
+        />
     </div>
 );
+
+export default Main;

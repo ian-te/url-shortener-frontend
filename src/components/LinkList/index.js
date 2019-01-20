@@ -1,8 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Link from "../Link";
+import { arrayOf } from "prop-types";
 
-function LinkList() {
-    return <div />;
+function LinkList({ items }) {
+    return items.map((item, key) => (
+        <div key={item.id || key}>
+            <Link {...item} />
+        </div>
+    ));
 }
 
 LinkList.propTypes = {};
