@@ -30,6 +30,7 @@ export default styled(Button)`
     border-radius: 3px;
     &:disabled {
         background-color: ${lighten(0.3, dark)};
+        cursor: wait;
     }
     cursor: pointer;
     ${props =>
