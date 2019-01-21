@@ -8,14 +8,9 @@ import {
 const initialState = {
     inputValue: "",
     urlLoading: false,
-    generatedLinks: [
-        {
-            id: 1,
-            shortUrl: "https://sh.rt/scFAe8",
-            url: "https://www.wrike.com/workspace.htm",
-            title: "Wrike"
-        }
-    ]
+    generatedLinks: [],
+    isValid: false,
+    error: false
 };
 
 export default (state = initialState, action) => {
@@ -25,20 +20,25 @@ export default (state = initialState, action) => {
                 ...state,
                 inputValue: action.payload
             };
-        case GENERATE_URL:
+        case GENERATE_URL: {
             return {
                 ...state,
-                urlLoading: true
+                urlLoading: true,
+                error: false
             };
+        }
         case URL_GENERATED:
             return {
                 ...state,
                 generatedLinks: [...state.generatedLinks, action.payload],
-                urlLoading: false
+                inputValue: action.payload.shortUrl || "",
+                urlLoading: false,
+                error: false
             };
         case URL_GENERATED_ERROR:
             return {
                 ...state,
+                urlLoading: false,
                 error: action.payload
             };
         default:
