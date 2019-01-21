@@ -31,6 +31,7 @@ export default styled(Button)`
     &:disabled {
         background-color: ${lighten(0.3, dark)};
     }
+    cursor: pointer;
     ${props =>
         props.theme === "hollow" &&
         `background-color: white;
